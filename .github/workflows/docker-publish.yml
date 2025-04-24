@@ -1,0 +1,25 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches: ["main"]  # Déclencheur : push sur la branche main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAMEt }}
+          password: ${{ secrets.DOCKERHUB_TOKENt }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.abdoulaye02/abouta-landing-page }}:latest
