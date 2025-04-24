@@ -22,4 +22,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.abdoulaye02/abouta-landing-page }}:latest
+          tags: abdoulaye02/abouta-landing-page:latest
