@@ -23,3 +23,5 @@ jobs:
           context: .
           push: true
           tags: abdoulaye02/abouta-landing-page:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/abdoulaye-96/landingPage
